@@ -13,3 +13,11 @@
   flex-grow: 1;
   color: white;
 }
+
+.header.lightmode {
+  background-color: lightgray;
+}
+
+.header.header.lightmode span {
+  color: tomato;
+}

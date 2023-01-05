@@ -1,7 +1,7 @@
 export function todosReducer(todos, action){
   switch(action.type) {
     case 'add':
-      return [
+      const addData = [
         ...todos,
         {
           id: action.title + Math.random(),
@@ -9,10 +9,14 @@ export function todosReducer(todos, action){
           'finished': false
         }
       ];
+      localStorage.setItem('todo', JSON.stringify(addData));
+      return addData;
     case 'delete':
-      return todos.filter(todo => todo.id !== action.id);
+      const removeData =todos.filter(todo => todo.id !== action.id);
+      localStorage.setItem('todo', JSON.stringify(removeData));
+      return removeData;
     case 'finished':
-      return todos.map(todo => {
+      const finishedData = todos.map(todo => {
         if (todo.id === action.id) {
           return {
             ...todo,
@@ -20,7 +24,11 @@ export function todosReducer(todos, action){
           }
         }
         return todo;
-      })
+      });
+      localStorage.setItem('todo', JSON.stringify(finishedData));
+      return finishedData;
+    case 'getFromLocalStorage':
+      return action.todos;
     default:
       return todos;
   }
