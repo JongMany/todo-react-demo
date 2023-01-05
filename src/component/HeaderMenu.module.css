@@ -1,0 +1,20 @@
+.header-menu {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+.header-menu li {
+  flex: 1 1 0;
+  color:tomato;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.header-menu li.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid tomato;
+  padding-top: 3px;
+}
