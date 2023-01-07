@@ -17,7 +17,7 @@ export default function Input({dispatchTodos}) {
 
   
   return (
-    <form className={styles['input-container']} onSubmit={submitHandler}>
+    <form className={styles.form} onSubmit={submitHandler}>
       <input placeholder='Add Todo' value={todoValue} onChange={todoInputHandler} />
       <button>Add</button>
     </form>

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   background-color: cadetblue;
@@ -13,6 +17,7 @@ body {
 }
 
 .todo-container {
+  min-width: 20rem;
   display: flex;
   flex-direction: column;
   width: 50%;

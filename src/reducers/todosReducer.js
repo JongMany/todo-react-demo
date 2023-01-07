@@ -29,6 +29,8 @@ export function todosReducer(todos, action){
       return finishedData;
     case 'getFromLocalStorage':
       return action.todos;
+    case 'modify':
+      return todos.map(todo => todo.id === action.id ? {...todo, title: action.title}: todo);
     default:
       return todos;
   }
